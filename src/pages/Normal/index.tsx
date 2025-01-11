@@ -3,39 +3,37 @@ import { AgGridReact } from "ag-grid-react";
 import { FC, useMemo } from "react";
 
 type Car = {
-  make: string;
-  model: string;
-  price: number;
+  col1: string;
+  col2: string;
+  col3: number;
 };
 
 export const Normal: FC = () => {
+  /**
+   * flex: 1 で均等に幅を割り当てる
+   * 他にも flex: 2 などで割合を指定できる
+   */
   const header = useMemo<ColDef[]>(
     () => [
-      { field: "make", headerName: "Make", flex: 1 },
-      { field: "model", headerName: "Model", flex: 1 },
-      { field: "price", headerName: "Price", flex: 1 },
+      { field: "col1", headerName: "列1", flex: 1 },
+      { field: "col2", headerName: "列2", flex: 1 },
+      { field: "col3", headerName: "列3", flex: 1 },
     ],
     []
   );
 
   const gridData = useMemo<Car[]>(
     () => [
-      { make: "Toyota", model: "Celica", price: 35000, value: "test" },
-      { make: "Ford", model: "Mondeo", price: 32000, value: "test2" },
-      { make: "Porsche", model: "Boxster", price: 72000, value: "test3" },
+      { col1: "データ1 - col1", col2: "データ1 - col2", col3: 200 },
+      { col1: "データ2 - col1", col2: "データ2 - col2", col3: 400 },
+      { col1: "データ3 - col1", col2: "データ3 - col3", col3: 600 },
     ],
     []
   );
 
   return (
     <div className="ag-theme-alpine">
-      <AgGridReact
-        rowData={gridData}
-        columnDefs={header}
-        animateRows={true}
-        domLayout="autoHeight"
-        rowSelection="multiple"
-      />
+      <AgGridReact rowData={gridData} columnDefs={header} />
     </div>
   );
 };
