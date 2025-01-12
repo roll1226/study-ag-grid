@@ -47,7 +47,7 @@ export const Checkbox: FC = () => {
       if (selectedRows.length === 0) {
         alert("行が選択されていません");
       } else {
-        alert(selectedRows.map((row) => row.id).join(", "));
+        alert(selectedRows.map((row) => JSON.stringify(row)).join(", "));
       }
     }
     // NOTE: エラーハンドリングが必要
