@@ -10,13 +10,12 @@ type Item = {
 };
 
 export const Checkbox: FC = () => {
-  const girdRef = useRef<AgGridReact>(null);
+  const gridRef = useRef<AgGridReact>(null);
 
   const header = useMemo<ColDef[]>(
     () => [
       {
         field: "check",
-        headerName: "",
         checkboxSelection: true,
         headerCheckboxSelection: true,
         width: 50,
@@ -42,8 +41,8 @@ export const Checkbox: FC = () => {
    * @returns {void}
    */
   const getSelectedRows = useCallback(() => {
-    if (girdRef.current?.api) {
-      const selectedRows = girdRef.current.api.getSelectedRows();
+    if (gridRef.current?.api) {
+      const selectedRows = gridRef.current.api.getSelectedRows() as Item[];
       if (selectedRows.length === 0) {
         alert("行が選択されていません");
       } else {
@@ -56,7 +55,7 @@ export const Checkbox: FC = () => {
   return (
     <div className="ag-theme-alpine">
       <AgGridReact
-        ref={girdRef}
+        ref={gridRef}
         rowData={gridData}
         columnDefs={header}
         domLayout="autoHeight"
