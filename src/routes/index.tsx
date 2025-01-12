@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Checkbox } from "../pages/Checkbox";
 import { Normal } from "../pages/Normal";
 import { NotFound } from "../pages/NotFound";
+import { RowClick } from "../pages/RowClick";
 
 type CurrentRoutesType = {
   path: string;
@@ -19,6 +20,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/checkbox",
     element: Checkbox,
     title: "Checkbox",
+  },
+  {
+    path: "/row-click",
+    element: RowClick,
+    title: "Row Click",
   },
   {
     path: "*",
