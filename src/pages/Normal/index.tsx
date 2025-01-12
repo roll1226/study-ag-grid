@@ -33,7 +33,11 @@ export const Normal: FC = () => {
 
   return (
     <div className="ag-theme-alpine">
-      <AgGridReact rowData={gridData} columnDefs={header} />
+      <AgGridReact
+        rowData={gridData}
+        columnDefs={header}
+        domLayout="autoHeight"
+      />
     </div>
   );
 };
