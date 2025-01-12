@@ -2,7 +2,7 @@ import { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { FC, useMemo } from "react";
 
-type Car = {
+type Data = {
   col1: string;
   col2: string;
   col3: number;
@@ -10,8 +10,16 @@ type Car = {
 
 export const Normal: FC = () => {
   /**
-   * flex: 1 で均等に幅を割り当てる
-   * 他にも flex: 2 などで割合を指定できる
+   * field
+   * 表示するデータを紐づいた列に表示する用
+   */
+  /**
+   * headerName
+   * 表示する列のヘッダー名
+   */
+  /**
+   * flex
+   * 列の幅の割合を指定する
    */
   const header = useMemo<ColDef[]>(
     () => [
@@ -22,7 +30,7 @@ export const Normal: FC = () => {
     []
   );
 
-  const gridData = useMemo<Car[]>(
+  const gridData = useMemo<Data[]>(
     () => [
       { col1: "データ1 - col1", col2: "データ1 - col2", col3: 200 },
       { col1: "データ2 - col1", col2: "データ2 - col2", col3: 400 },
