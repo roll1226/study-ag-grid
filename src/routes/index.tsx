@@ -1,8 +1,16 @@
+import { FC } from "react";
 import { Normal } from "../pages/Normal";
 
-export const CurrentRoutes = [
+type CurrentRoutesType = {
+  path: string;
+  element: FC;
+  title: string;
+};
+
+export const CurrentRoutes: CurrentRoutesType[] = [
   {
     path: "/",
-    element: <Normal />,
+    element: Normal,
+    title: "Normal",
   },
 ];

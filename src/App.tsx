@@ -2,6 +2,7 @@ import "ag-grid-community/dist/styles/ag-grid.css"; // Ag-Gridの基本スタイ
 import "ag-grid-community/dist/styles/ag-theme-alpine.css"; // テーマスタイル
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HeadTitle } from "./components/common/headTitle";
 import { CurrentRoutes } from "./routes";
 
 // type Car = {
@@ -90,7 +91,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         {CurrentRoutes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <HeadTitle title={route.title}>
+                <route.element />
+              </HeadTitle>
+            }
+          />
         ))}
       </Routes>
     </BrowserRouter>
