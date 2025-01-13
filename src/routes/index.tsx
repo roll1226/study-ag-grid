@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Checkbox } from "../pages/Checkbox";
+import { Link } from "../pages/Link";
 import { Normal } from "../pages/Normal";
 import { NotFound } from "../pages/NotFound";
 import { RowClick } from "../pages/RowClick";
@@ -25,6 +26,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/row-click",
     element: RowClick,
     title: "Row Click",
+  },
+  {
+    path: "/link",
+    element: Link,
+    title: "Link",
   },
   {
     path: "*",
