@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { CheckboxPage } from "../pages/CheckboxPage";
+import { HorizontalScrollPage } from "../pages/HorizontalScrollPage";
 import { LinkPage } from "../pages/LinkPage";
 import { NormalPage } from "../pages/NormalPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
@@ -16,6 +17,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/",
     element: NormalPage,
     title: "Normal",
+  },
+  {
+    path: "/horizontal-scroll",
+    element: HorizontalScrollPage,
+    title: "Horizontal Scroll",
   },
   {
     path: "/checkbox",
