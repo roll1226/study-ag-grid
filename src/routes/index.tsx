@@ -4,6 +4,7 @@ import { HorizontalScrollPage } from "../pages/HorizontalScrollPage";
 import { LinkPage } from "../pages/LinkPage";
 import { NormalPage } from "../pages/NormalPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
+import { NowRowPage } from "../pages/NowRowPage";
 import { RowClickPage } from "../pages/RowClickPage";
 
 type CurrentRoutesType = {
@@ -37,6 +38,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/link",
     element: LinkPage,
     title: "Link",
+  },
+  {
+    path: "/now-row",
+    element: NowRowPage,
+    title: "Now Row",
   },
   {
     path: "*",
