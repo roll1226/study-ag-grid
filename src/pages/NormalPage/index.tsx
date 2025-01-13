@@ -2,7 +2,7 @@ import { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { FC, useMemo } from "react";
 
-type Data = {
+type Item = {
   col1: string;
   col2: string;
   col3: number;
@@ -30,7 +30,7 @@ export const NormalPage: FC = () => {
     []
   );
 
-  const gridData = useMemo<Data[]>(
+  const gridData = useMemo<Item[]>(
     () => [
       { col1: "データ1 - col1", col2: "データ1 - col2", col3: 200 },
       { col1: "データ2 - col1", col2: "データ2 - col2", col3: 400 },
