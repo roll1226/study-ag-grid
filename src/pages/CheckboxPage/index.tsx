@@ -9,7 +9,7 @@ type Item = {
   price: number;
 };
 
-export const Checkbox: FC = () => {
+export const CheckboxPage: FC = () => {
   const gridRef = useRef<AgGridReact>(null);
 
   const header = useMemo<ColDef[]>(

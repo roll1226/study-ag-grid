@@ -8,7 +8,7 @@ type Item = {
   price: number;
 };
 
-export const RowClick: FC = () => {
+export const RowClickPage: FC = () => {
   const header = useMemo<ColDef[]>(
     () => [
       // NOTE: 行クリックとチェックボックスの共存が可能

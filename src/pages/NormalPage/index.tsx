@@ -8,7 +8,7 @@ type Data = {
   col3: number;
 };
 
-export const Normal: FC = () => {
+export const NormalPage: FC = () => {
   /**
    * field
    * 表示するデータを紐づいた列に表示する用

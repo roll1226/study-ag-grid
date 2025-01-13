@@ -1,3 +1,4 @@
+import { Link } from "@mui/material";
 import {
   ColDef,
   ICellRendererParams,
@@ -17,6 +18,15 @@ type Item = {
 
 /**
  * リンクを表示するコンポーネント
+ *
+ * @param {{
+ *   data: Item;
+ *   value: string;
+ * }} {
+ *   data,
+ *   value,
+ * }
+ * @return {JSX.Element}
  */
 const LinkComponent: FC<ICellRendererParams> = ({
   data,
@@ -26,19 +36,18 @@ const LinkComponent: FC<ICellRendererParams> = ({
   value: string;
 }): JSX.Element => {
   return (
-    <a
+    <Link
       href={data.link}
+      className="ag-link"
       target="_blank"
       rel="noopener noreferrer"
-      className="ag-link"
-      style={{ color: "blue", textDecoration: "underline" }}
     >
       {value}
-    </a>
+    </Link>
   );
 };
 
-export const Link: FC = () => {
+export const LinkPage: FC = () => {
   const header = useMemo<ColDef[]>(
     () => [
       {

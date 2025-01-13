@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Checkbox } from "../pages/Checkbox";
-import { Link } from "../pages/Link";
-import { Normal } from "../pages/Normal";
-import { NotFound } from "../pages/NotFound";
-import { RowClick } from "../pages/RowClick";
+import { CheckboxPage } from "../pages/CheckboxPage";
+import { LinkPage } from "../pages/LinkPage";
+import { NormalPage } from "../pages/NormalPage";
+import { NotFoundPage } from "../pages/NotFoundPage";
+import { RowClickPage } from "../pages/RowClickPage";
 
 type CurrentRoutesType = {
   path: string;
@@ -14,27 +14,27 @@ type CurrentRoutesType = {
 export const CurrentRoutes: CurrentRoutesType[] = [
   {
     path: "/",
-    element: Normal,
+    element: NormalPage,
     title: "Normal",
   },
   {
     path: "/checkbox",
-    element: Checkbox,
+    element: CheckboxPage,
     title: "Checkbox",
   },
   {
     path: "/row-click",
-    element: RowClick,
+    element: RowClickPage,
     title: "Row Click",
   },
   {
     path: "/link",
-    element: Link,
+    element: LinkPage,
     title: "Link",
   },
   {
     path: "*",
-    element: NotFound,
+    element: NotFoundPage,
     title: "404 Not Found",
   },
 ];
