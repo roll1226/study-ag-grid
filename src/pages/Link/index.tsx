@@ -41,7 +41,6 @@ const LinkComponent: FC<ICellRendererParams> = ({
 export const Link: FC = () => {
   const header = useMemo<ColDef[]>(
     () => [
-      // NOTE: 行クリックとチェックボックスの共存が可能
       {
         field: "check",
         checkboxSelection: true,
@@ -69,14 +68,11 @@ export const Link: FC = () => {
     []
   );
 
-  /**
-   * 行がクリックされた時の処理
-   * @param {RowClickedEvent} e
-   * @returns {void}
-   */
   const handleRowClick = useCallback((e: RowClickedEvent) => {
-    const dom = e.event?.target as HTMLElement;
-    if (dom.classList.contains("ag-link")) return;
+    if (e.event?.target instanceof HTMLElement) {
+      const dom = e.event.target;
+      if (dom.classList.contains("ag-link")) return;
+    }
 
     const rowData = e.data as Item;
     alert(JSON.stringify(rowData));
