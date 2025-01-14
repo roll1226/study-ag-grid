@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { CheckboxPage } from "../pages/CheckboxPage";
+import { DefaultColDefPage } from "../pages/DefaultColDefPage";
 import { HorizontalScrollPage } from "../pages/HorizontalScrollPage";
 import { LinkPage } from "../pages/LinkPage";
 import { NormalPage } from "../pages/NormalPage";
@@ -61,6 +62,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/on-grid-ready",
     element: OnGridReadyPage,
     title: "On Grid Ready",
+  },
+  {
+    path: "/default-col-def",
+    element: DefaultColDefPage,
+    title: "Default Col Def",
   },
   {
     path: "*",
