@@ -7,6 +7,7 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 import { NowRowPage } from "../pages/NowRowPage";
 import { PaginationPage } from "../pages/PaginationPage";
 import { RowClickPage } from "../pages/RowClickPage";
+import { StylePage } from "../pages/StylePage";
 
 type CurrentRoutesType = {
   path: string;
@@ -49,6 +50,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/pagination",
     element: PaginationPage,
     title: "Pagination",
+  },
+  {
+    path: "/style",
+    element: StylePage,
+    title: "Style",
   },
   {
     path: "*",
