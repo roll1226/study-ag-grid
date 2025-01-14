@@ -29,7 +29,7 @@ export const PaginationPage: FC = () => {
     () => [
       ...Array.from({ length: 100 }, (_, i) => ({
         id: i + 1,
-        name: `Item ${i + 21}`,
+        name: `Item ${i + 1}`,
         price: (i + 1) * 100,
       })),
     ],
