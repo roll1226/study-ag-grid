@@ -20,9 +20,9 @@ const DEFAULT_COL_DEF: ColDef = {
 export const DefaultColDefPage: FC = () => {
   const headers = useMemo<ColDef[]>(
     () => [
-      { field: "id", headerName: "ID", flex: 1 },
-      { field: "name", headerName: "Name", flex: 1 },
-      { field: "price", headerName: "Price", flex: 1 },
+      { field: "id", headerName: "ID" },
+      { field: "name", headerName: "Name" },
+      { field: "price", headerName: "Price" },
     ],
     []
   );
