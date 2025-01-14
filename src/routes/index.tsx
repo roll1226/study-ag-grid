@@ -5,6 +5,7 @@ import { LinkPage } from "../pages/LinkPage";
 import { NormalPage } from "../pages/NormalPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import { NowRowPage } from "../pages/NowRowPage";
+import { OnGridReadyPage } from "../pages/OnGridReadyPage";
 import { PaginationPage } from "../pages/PaginationPage";
 import { RowClickPage } from "../pages/RowClickPage";
 import { StylePage } from "../pages/StylePage";
@@ -55,6 +56,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/style",
     element: StylePage,
     title: "Style",
+  },
+  {
+    path: "/on-grid-ready",
+    element: OnGridReadyPage,
+    title: "On Grid Ready",
   },
   {
     path: "*",
