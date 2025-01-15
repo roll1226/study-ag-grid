@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { ApiPage } from "../pages/ApiPage";
 import { CheckboxPage } from "../pages/CheckboxPage";
 import { DefaultColDefPage } from "../pages/DefaultColDefPage";
 import { HorizontalScrollPage } from "../pages/HorizontalScrollPage";
@@ -67,6 +68,11 @@ export const CurrentRoutes: CurrentRoutesType[] = [
     path: "/default-col-def",
     element: DefaultColDefPage,
     title: "Default Col Def",
+  },
+  {
+    path: "/api",
+    element: ApiPage,
+    title: "Api",
   },
   {
     path: "*",
