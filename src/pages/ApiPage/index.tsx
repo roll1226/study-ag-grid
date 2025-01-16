@@ -47,6 +47,20 @@ export const ApiPage: FC = () => {
     }
   }, [gridRef]);
 
+  const applyTransaction = useCallback(() => {
+    if (gridRef.current?.api) {
+      gridRef.current.api.applyTransaction({
+        add: [
+          {
+            id: 4,
+            name: "Item 4",
+            price: 400,
+          },
+        ],
+      });
+    }
+  }, [gridRef]);
+
   return (
     <div className="ag-theme-alpine">
       <AgGridReact
@@ -57,6 +71,10 @@ export const ApiPage: FC = () => {
       />
       <Button variant="contained" onClick={exportCsv}>
         CSV
+      </Button>
+
+      <Button variant="contained" onClick={applyTransaction}>
+        行を追加
       </Button>
     </div>
   );
