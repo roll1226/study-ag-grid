@@ -71,6 +71,24 @@ export const ApiPage: FC = () => {
     }
   }, [gridRef]);
 
+  const updateRowData = useCallback(() => {
+    if (gridRef.current?.api) {
+      const updateData = [] as Item[];
+      gridRef.current.api.forEachNodeAfterFilterAndSort(
+        (detailGridInfo, index) => {
+          const data = detailGridInfo.data as Item;
+          if (index === 0) {
+            data.price = 500;
+            updateData.push(data);
+          }
+        }
+      );
+      gridRef.current.api.applyTransaction({
+        update: updateData,
+      });
+    }
+  }, [gridRef]);
+
   return (
     <div className="ag-theme-alpine">
       <AgGridReact
@@ -89,6 +107,10 @@ export const ApiPage: FC = () => {
 
       <Button variant="contained" onClick={movePriceColumn}>
         価格列を移動
+      </Button>
+
+      <Button variant="contained" onClick={updateRowData}>
+        行を更新
       </Button>
     </div>
   );
