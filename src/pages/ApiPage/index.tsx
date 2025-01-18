@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { ColDef } from "ag-grid-community";
+import { ColDef, Column } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { FC, useCallback, useMemo, useRef } from "react";
 
@@ -15,16 +15,19 @@ export const ApiPage: FC = () => {
     () => [
       {
         field: "id",
+        colId: "id",
         headerName: "ID",
         flex: 1,
       },
       {
         field: "name",
+        colId: "name",
         headerName: "Name",
         flex: 1,
       },
       {
         field: "price",
+        colId: "price",
         headerName: "Price",
         flex: 1,
       },
@@ -61,6 +64,13 @@ export const ApiPage: FC = () => {
     }
   }, [gridRef]);
 
+  const movePriceColumn = useCallback(() => {
+    if (gridRef.current?.api) {
+      const column = gridRef.current.columnApi.getColumn("price") as Column;
+      gridRef.current.columnApi.moveColumn(column, 0);
+    }
+  }, [gridRef]);
+
   return (
     <div className="ag-theme-alpine">
       <AgGridReact
@@ -75,6 +85,10 @@ export const ApiPage: FC = () => {
 
       <Button variant="contained" onClick={applyTransaction}>
         行を追加
+      </Button>
+
+      <Button variant="contained" onClick={movePriceColumn}>
+        価格列を移動
       </Button>
     </div>
   );
