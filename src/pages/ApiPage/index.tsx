@@ -77,6 +77,8 @@ export const ApiPage: FC = () => {
       gridRef.current.api.forEachNodeAfterFilterAndSort(
         (detailGridInfo, index) => {
           const data = detailGridInfo.data as Item;
+          console.log(data);
+
           if (index === 0) {
             data.price = 500;
             updateData.push(data);
