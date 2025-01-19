@@ -74,6 +74,7 @@ export const ApiPage: FC = () => {
   const updateRowData = useCallback(() => {
     if (gridRef.current?.api) {
       const updateData = [] as Item[];
+      // NOTE: これを動作させないと動かない？
       gridRef.current.api.forEachNodeAfterFilterAndSort(
         (detailGridInfo, index) => {
           const data = detailGridInfo.data as Item;
