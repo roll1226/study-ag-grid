@@ -14,6 +14,12 @@ export const ApiPage: FC = () => {
   const headers = useMemo<ColDef[]>(
     () => [
       {
+        headerCheckboxSelection: true,
+        checkboxSelection: true,
+        headerCheckboxSelectionFilteredOnly: true,
+        minWidth: 50,
+      },
+      {
         field: "id",
         colId: "id",
         headerName: "ID",
@@ -71,6 +77,12 @@ export const ApiPage: FC = () => {
     }
   }, [gridRef]);
 
+  const selectAllRows = useCallback(() => {
+    if (gridRef.current?.api) {
+      gridRef.current.api.selectAll();
+    }
+  }, [gridRef]);
+
   const updateRowData = useCallback(() => {
     if (gridRef.current?.api) {
       const updateData = [] as Item[];
@@ -114,6 +126,10 @@ export const ApiPage: FC = () => {
 
       <Button variant="contained" onClick={updateRowData}>
         行を更新
+      </Button>
+
+      <Button variant="contained" onClick={selectAllRows}>
+        全行選択
       </Button>
     </div>
   );
