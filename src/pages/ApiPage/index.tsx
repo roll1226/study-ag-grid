@@ -83,6 +83,12 @@ export const ApiPage: FC = () => {
     }
   }, [gridRef]);
 
+  const deselectAllRows = useCallback(() => {
+    if (gridRef.current?.api) {
+      gridRef.current.api.deselectAll();
+    }
+  }, [gridRef]);
+
   const updateRowData = useCallback(() => {
     if (gridRef.current?.api) {
       const updateData = [] as Item[];
@@ -130,6 +136,10 @@ export const ApiPage: FC = () => {
 
       <Button variant="contained" onClick={selectAllRows}>
         全行選択
+      </Button>
+
+      <Button variant="contained" onClick={deselectAllRows}>
+        選択解除
       </Button>
     </div>
   );
